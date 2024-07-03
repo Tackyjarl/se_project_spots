@@ -21,3 +21,7 @@ This project is designed to be a page for a social media website where users can
 **Video**
 
 Link to video will be provided after initial evaluation is complete
+
+**GitHub Pages**
+
+https://tackyjarl.github.io/se_project_spots/
