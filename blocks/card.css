@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 413px;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #212121;
+}
+
+.card__image {
+  height: 413px;
+  width: 413px;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card__button-like {
+  margin-left: auto;
+  opacity: 40%;
+  background-color: transparent;
+  border: none;
+}
+
+.card__button-like:hover {
+  opacity: 100%;
+}

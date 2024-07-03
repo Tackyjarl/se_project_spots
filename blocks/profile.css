@@ -1,0 +1,78 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: 1px #21212166 solid;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  color: #212121;
+}
+
+.profile__avatar {
+  margin-right: 20px;
+  height: 190px;
+  width: 190px;
+  border-radius: 8px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.profile__description {
+  margin: 12px 0 0;
+  opacity: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.profile__edit-button {
+  margin-top: auto;
+  margin-right: auto;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 70%;
+}
+
+.profile__edit-button:hover {
+  opacity: 100%;
+}
+
+.profile__edit-button-pencil {
+  padding-right: 8px;
+}
+
+.profile__add-button {
+  margin-left: auto;
+  margin-top: auto;
+  width: 149px;
+  height: 52px;
+  background-color: #212121;
+  color: #fcf5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.profile__add-button:hover {
+  opacity: 70%;
+}
+
+.profile__add-button-plus {
+  padding-right: 8px;
+}

@@ -1,21 +1,23 @@
 # Project 3: Spots
 
-### Overview  
+### Project Features
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+- Intro
+- Figma
+- Images
+
+### Project Description
+
+This project is designed to be a page for a social media website where users can create and share posts. This project is used to learn and apply recently developed html and css skills. This includes the use of flexbox and grid displays, as well as the implementation of buttons and lists to provide a solid website interface.
+
+### Figma
+
+- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+
+**Images**
+
+![alt text](/images/spots-app-1440px.jpg)
+
+**Video**
+
+Link to video will be provided after initial evaluation is complete
