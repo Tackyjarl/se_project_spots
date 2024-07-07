@@ -24,11 +24,17 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__description {
   margin: 12px 0 0;
   opacity: 70%;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
