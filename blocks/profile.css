@@ -77,3 +77,38 @@
 .profile__add-button-plus {
   padding-right: 8px;
 }
+
+@media screen and (max-width: 764px) and (min-width: 320px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .profile__avatar {
+    margin-right: 0;
+    width: 80px;
+    height: 80px;
+    padding-bottom: 12px;
+  }
+
+  .profile__name {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .profile__description {
+    padding-bottom: 32px;
+  }
+  .profile__edit-button {
+    margin-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .profile__add-button {
+    margin-left: 0;
+    width: 100%;
+  }
+}
