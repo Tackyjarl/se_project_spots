@@ -49,4 +49,9 @@
     height: 288px;
     width: 288px;
   }
+
+  .card__title {
+    font-size: 16px;
+    line-height: 1;
+  }
 }
