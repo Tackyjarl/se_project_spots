@@ -20,7 +20,7 @@ This project is designed to be a page for a social media website where users can
 
 **Video**
 
-Link to video will be provided after initial evaluation is complete
+https://youtu.be/gknGMsB6-go
 
 **GitHub Pages**
 
