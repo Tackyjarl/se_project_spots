@@ -39,15 +39,10 @@
             <template id="card-template">
               <li class="card">
                 <img src="" alt="" class="card__image" />
+                <button type="button" class="card__button-delete"></button>
                 <div class="card__content">
                   <h2 class="card__title"></h2>
-                  <button type="button" class="card__button-like">
-                    <img
-                      src="./images/button-heart.svg"
-                      alt="heart"
-                      class="card__button-like-heart"
-                    />
-                  </button>
+                  <button type="button" class="card__button-like"></button>
                 </div>
               </li>
             </template>
@@ -68,6 +63,7 @@
                 id="profile-name"
                 type="text"
                 class="modal__input"
+                name="name"
                 placeholder="Name"
               />
             </label>
@@ -77,11 +73,51 @@
                 id="profile-description"
                 type="text"
                 class="modal__input"
+                name="description"
                 placeholder="Description"
               />
             </label>
             <button type="submit" class="modal__button-submit">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal" id="new-post-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__button-close"></button>
+          <h2 class="modal__title">New Post</h2>
+          <form name="new-post" class="modal__form" id="new-post">
+            <label for="new-post-link-input" class="modal__label">
+              Image link
+              <input
+                id="new-post-link-input"
+                type="url"
+                class="modal__input"
+                name="link"
+                placeholder="Paste a link to the picture"
+              />
+            </label>
+            <label for="new-post-caption-input" class="modal__label">
+              Caption
+              <input
+                id="new-post-caption-input"
+                type="text"
+                class="modal__input"
+                name="caption"
+                placeholder="Type your caption"
+              />
+            </label>
+            <button type="submit" class="modal__button-submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="image-preview-modal">
+        <div class="modal__container modal__container_type_preview">
+          <button
+            type="button"
+            class="modal__button-close modal__button-close_preview"
+          ></button>
+          <img src="" alt="" class="modal__image" />
+          <p class="modal__caption"></p>
         </div>
       </div>
     </div>
