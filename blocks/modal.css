@@ -150,4 +150,25 @@
   .modal__button-submit {
     width: 100%;
   }
+
+  .modal__container_type_preview {
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .modal__image {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    align-self: center;
+  }
+  .modal__button-close_preview {
+    top: 0px;
+    position: relative;
+    align-self: last baseline;
+  }
+  .modal__caption {
+    height: fit-content;
+  }
 }
