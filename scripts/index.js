@@ -134,10 +134,11 @@ function getCardElement(data) {
   return cardElement;
 }
 
-initialCards.forEach((item) => {
+function renderCard(item, method = "prepend") {
   const cardElement = getCardElement(item);
-  function renderCard(item, method = "prepend") {
-    cardsList[method](cardElement);
-  }
+  cardsList[method](cardElement);
+}
+
+initialCards.forEach((item) => {
   renderCard(item, "append");
 });
