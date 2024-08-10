@@ -64,6 +64,7 @@
 
 .modal__button-close:hover {
   opacity: 100%;
+  cursor: pointer;
 }
 
 .modal__button-close_preview:hover {
@@ -99,6 +100,13 @@
   background-color: #212121;
   border-radius: 8px;
   color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.modal__button-submit_inactive {
+  cursor: not-allowed;
+  background-color: #21212180;
 }
 
 .modal__image {
@@ -123,6 +131,17 @@
   font-size: 20px;
   line-height: 1.2;
 }
+.modal__input-error {
+  color: #ff0000;
+}
+.modal__input-error_active {
+  opacity: 70%;
+}
+.modal__input_type_error {
+  display: block;
+  border-color: #ff000099;
+}
+
 @media screen and (max-width: 764px) and (min-width: 320px) {
   .modal {
     padding: 0 10px;
