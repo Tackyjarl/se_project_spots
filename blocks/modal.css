@@ -104,7 +104,7 @@
   border: none;
 }
 
-.modal__button-submit_inactive {
+.modal__button-submit:disabled {
   cursor: not-allowed;
   background-color: #21212180;
 }
