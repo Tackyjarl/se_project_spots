@@ -32,7 +32,6 @@
   padding: 32px 50px;
   position: relative;
   box-sizing: border-box;
-  overflow-y: auto;
 }
 
 .modal__container_type_preview {
