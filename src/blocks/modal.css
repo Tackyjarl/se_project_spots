@@ -110,6 +110,49 @@
   background-color: #21212180;
 }
 
+.modal__delete {
+  margin: auto;
+  padding: 0px 149px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__title-delete {
+  text-align: center;
+}
+
+.modal__button-delete {
+  width: 156px;
+  padding: 18px 0;
+  background-color: #ff6565;
+  border-radius: 8px;
+  color: #212121;
+  cursor: pointer;
+  border: none;
+}
+
+.modal__button-cancel {
+  width: 156px;
+  padding: 18px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #212121;
+  color: #212121;
+  cursor: pointer;
+}
+
+.modal__button-cancel:hover {
+  background-color: #212121;
+  color: #fff;
+}
+
+.modal__button-delete:hover {
+  background-color: #ff3333;
+}
+
 .modal__image {
   width: 100%;
   border-radius: 8px;
