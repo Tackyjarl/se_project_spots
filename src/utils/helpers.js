@@ -10,3 +10,18 @@ export function setSubmitText(
     button.textContent = defaultText;
   }
 }
+
+export function handleSubmit(request, evt, loadingText = "Saving...") {
+  evt.preventDefault();
+  const submitButton = evt.submitter;
+  const initialText = submitButton.textContent;
+  setSubmitText(submitButton, true, initialText, loadingText);
+  request()
+    .then(() => {
+      evt.target.reset();
+    })
+    .catch(console.error)
+    .finally(() => {
+      setSubmitText(submitButton, false, initialText);
+    });
+}

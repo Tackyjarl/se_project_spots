@@ -12,9 +12,10 @@ spotsLogo.src = spotsLogoSrc;
 
 const profileAvatar = document.getElementById("profile-avatar");
 
-import { setSubmitText } from "../utils/helpers.js";
+import { setSubmitText, handleSubmit } from "../utils/helpers.js";
 
 import Api from "../utils/Api.js";
+// import { make } from "core-js/core/object";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -127,64 +128,48 @@ newPostModalButton.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-function handleProfileFormSubmit(event) {
-  event.preventDefault();
-  const submitButton = event.submitter;
-  setSubmitText(submitButton, true);
-  api
-    .editUserInfo({
-      name: inputProfileName.value,
-      about: inputProfileDescription.value,
-    })
-    .then((data) => {
-      profileName.textContent = data.name;
-      profileDescription.textContent = data.about;
-    })
-    .catch(console.error)
-    .finally(() => {
-      setSubmitText(submitButton, false);
-    });
-  disableButton(editProfileModalSubmit);
-  closeModal(editProfileModal);
+function handleProfileFormSubmit(evt) {
+  function makeRequest() {
+    return api
+      .editUserInfo({
+        name: inputProfileName.value,
+        about: inputProfileDescription.value,
+      })
+      .then((data) => {
+        profileName.textContent = data.name;
+        profileDescription.textContent = data.about;
+        disableButton(editProfileModalSubmit);
+        closeModal(editProfileModal);
+      });
+  }
+  handleSubmit(makeRequest, evt);
 }
 
-function handleAddFormSubmit(event) {
-  event.preventDefault();
-  const submitButton = event.submitter;
-  setSubmitText(submitButton, true);
-  api
-    .addCard({
-      name: inputNewPostCaption.value,
-      link: inputNewPostLink.value,
-    })
-    .then((data) => {
-      renderCard(data);
-    })
-    .catch(console.error)
-    .finally(() => {
-      setSubmitText(submitButton, false);
-    });
-  event.target.reset();
-  disableButton(newPostModalSubmit);
-  closeModal(newPostModal);
+function handleAddFormSubmit(evt) {
+  function makeRequest() {
+    return api
+      .addCard({
+        name: inputNewPostCaption.value,
+        link: inputNewPostLink.value,
+      })
+      .then((data) => {
+        renderCard(data);
+        disableButton(newPostModalSubmit);
+        closeModal(newPostModal);
+      });
+  }
+  handleSubmit(makeRequest, evt);
 }
 
-function handleAvatarFormSubmit(event) {
-  event.preventDefault();
-  const submitButton = event.submitter;
-  setSubmitText(submitButton, true);
-  api
-    .editAvatarInfo({ avatar: avatarInput.value })
-    .then((data) => {
+function handleAvatarFormSubmit(evt) {
+  function makeRequest() {
+    return api.editAvatarInfo({ avatar: avatarInput.value }).then((data) => {
       profileAvatar.setAttribute("src", data.avatar);
-    })
-    .catch(console.error)
-    .finally(() => {
-      setSubmitText(submitButton, false);
+      disableButton(avatarModalSubmit);
+      closeModal(avatarModal);
     });
-  event.target.reset();
-  disableButton(avatarModalSubmit);
-  closeModal(avatarModal);
+  }
+  handleSubmit(makeRequest, evt);
 }
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
@@ -243,19 +228,13 @@ function handleDeleteCard(cardElement, cardId) {
 }
 
 function handleDeleteSubmit(evt) {
-  evt.preventDefault();
-  const submitButton = evt.submitter;
-  setSubmitText(submitButton, true, "", "Deleting...");
-  api
-    .deleteCard(selectedCardId)
-    .then(() => {
+  function makeRequest() {
+    return api.deleteCard(selectedCardId).then(() => {
       selectedCard.remove();
       closeModal(deleteModal);
-    })
-    .catch(console.error)
-    .finally(() => {
-      setSubmitText(submitButton, false, "Delete");
     });
+  }
+  handleSubmit(makeRequest, evt, "Deleting...");
 }
 
 deleteCancelButton.addEventListener("click", () => {
@@ -267,12 +246,11 @@ deleteForm.addEventListener("submit", handleDeleteSubmit);
 // LIKE CARD
 
 function handleLike(evt, cardId) {
-  const isLiked = document.querySelector(".card__button-like_liked");
+  const isLiked = evt.target.classList.contains("card__button-like_liked");
   if (isLiked) {
     api
       .removeLike(cardId)
       .then(() => {
-        console.log("notliked");
         evt.target.classList.toggle("card__button-like_liked");
       })
       .catch(console.error);
@@ -280,7 +258,6 @@ function handleLike(evt, cardId) {
     api
       .addLike(cardId)
       .then(() => {
-        console.log("data");
         evt.target.classList.toggle("card__button-like_liked");
       })
       .catch(console.error);
