@@ -1,4 +1,4 @@
-# Project 3: Spots
+# Spots
 
 ### Project Features
 
@@ -8,19 +8,20 @@
 
 ### Project Description
 
-This project is designed to be a page for a social media website where users can create and share posts. This project is used to learn and apply recently developed html and css skills. This includes the use of flexbox and grid displays, as well as the implementation of buttons and lists to provide a solid website interface.
+This project is a basic social media style webpage where users can upload their own photos. The site features the ability to upload photos from a link to create a post or update the avatar photo, as well as add descriptions for posts. The site also includes functionality for adding and removing likes from posts, as well as the ability to delete a post.
 
 ### Figma
 
-- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+- [Link to the project on Figma](https://www.figma.com/design/mXGZ6wZ4QPKx5KjpHX9QCV/Sprint-9-Project%3A-Spots?node-id=0-1&node-type=canvas&t=gW0MHKWvA52aI9dX-0)
 
 **Images**
 
-![alt text](/images/spots-app-1440px.jpg)
-
+![alt text](src/images/Spots-project9.jpg)
+![alt text](src/images/Spots-project9-post.jpg)
+![alt text](src/images/Spots-project9-delete.jpg)
 **Video**
 
-https://youtu.be/gknGMsB6-go
+https://youtu.be/8rVHYdmravg
 
 **GitHub Pages**
 
