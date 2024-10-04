@@ -10,21 +10,30 @@
     />
     <meta name="author" content="Andrew Wallace" />
     <meta name="keywords" content="social, media" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="spots logo" class="header__logo" />
+        <img id="spots-logo" alt="spots logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="./images/avatar.jpg"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-button">
+              <img
+                src="<%=require('./images/button-pencil-light.svg')%>"
+                id="pencil-icon"
+                alt="pencil icon"
+                class="profile__pencil"
+              />
+            </button>
+            <img
+              id="profile-avatar"
+              alt="Bessie Coleman"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -42,7 +51,11 @@
                 <button type="button" class="card__button-delete"></button>
                 <div class="card__content">
                   <h2 class="card__title"></h2>
-                  <button type="button" class="card__button-like"></button>
+                  <button
+                    type="button"
+                    class="card__button-like"
+                    id="card-like"
+                  ></button>
                 </div>
               </li>
             </template>
@@ -141,8 +154,53 @@
           <p class="modal__caption"></p>
         </div>
       </div>
+
+      <div class="modal" id="delete-image-modal">
+        <div class="modal__container">
+          <button
+            type="button"
+            class="modal__button-close modal__button-close_preview"
+          ></button>
+          <h2 class="modal__title modal__title-delete">
+            Are you sure you want to delete this image?
+          </h2>
+          <form
+            name="delete-image"
+            class="modal__delete"
+            id="delete-image"
+            novalidate
+          >
+            <button type="submit" class="modal__button-delete">Delete</button>
+            <button type="button" class="modal__button-cancel">Cancel</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <script defer src="./scripts/index.js"></script>
-    <script defer src="./scripts/validation.js"></script>
+    <div class="modal" id="edit-avatar-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__button-close"></button>
+        <h2 class="modal__title">Edit profile avatar</h2>
+        <form
+          name="edit-avatar"
+          class="modal__form"
+          id="edit-avatar"
+          novalidate
+        >
+          <label for="profile-avatar-input" class="modal__label">
+            Profile Picture
+            <input
+              id="profile-avatar-input"
+              type="url"
+              class="modal__input"
+              name="avatar"
+              placeholder="Paste the link to an image"
+              required
+            />
+            <span class="modal__input-error profile-avatar-input-error"></span>
+          </label>
+          <button type="submit" class="modal__button-submit">Save</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

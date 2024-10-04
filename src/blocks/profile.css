@@ -8,7 +8,6 @@
 }
 
 .profile__avatar {
-  margin-right: 20px;
   height: 190px;
   width: 190px;
   border-radius: 8px;
@@ -30,10 +29,11 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  padding-bottom: 12px;
 }
 
 .profile__description {
-  margin: 12px 0 0;
+  margin: 0;
   opacity: 70%;
   font-size: 16px;
   line-height: 1;
@@ -99,6 +99,39 @@
 .profile__add-button:hover {
   opacity: 70%;
 }
+.profile__avatar-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+  opacity: 50%;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.profile__avatar-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 190px;
+  height: 190px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  gap: 8px;
+  visibility: hidden;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff;
+}
+
+.profile__avatar-button::after {
+  content: "Edit Avatar";
+}
 
 @media screen and (max-width: 764px) and (min-width: 320px) {
   .profile {
@@ -109,16 +142,34 @@
     padding: 20px 0;
   }
 
+  .profile__avatar-button {
+    position: absolute;
+    top: 52px;
+    left: 52px;
+    visibility: visible;
+    background-color: #000;
+    opacity: 50%;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    padding-bottom: 0px;
+    gap: 0px;
+  }
+
+  .profile__avatar-button::after {
+    content: "";
+  }
+
   .profile__avatar {
     margin-right: 0;
     width: 80px;
     height: 80px;
-    padding-bottom: 12px;
   }
 
   .profile__name {
     font-size: 20px;
     line-height: 1;
+    padding-top: 12px;
   }
 
   .profile__description {
